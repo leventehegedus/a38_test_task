@@ -1,1 +1,0 @@
-# a38_test_task
