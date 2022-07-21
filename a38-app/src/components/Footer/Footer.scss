@@ -1,0 +1,10 @@
+@import '../../styles/variables.scss';
+
+button {
+  border-radius: $a38-border-radius;
+  height: 24px;
+  width: 60px;
+  cursor: pointer;
+  border: 1px solid $primary-dark-content-color;
+  background-color: $secondary-background-color;
+}

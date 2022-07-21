@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+
+.wizard-container {
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  box-shadow: $a38-shadow;
+  border-radius: $a38-border-radius;
+  padding: $a38-default-padding;
+  @include mediaMd {
+    width: 840px;
+    height: 600px;
+  }
+}

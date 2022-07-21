@@ -1,0 +1,38 @@
+// Global variables
+$primary-background-color: #F6F2ED;
+$secondary-background-color: #FFFFFF;
+$tetriary-background-color: #EDE1C3;
+$primary-dark-content-color: #000000;
+$primary-bright-content-color: #FFFFFF;
+$secondary-content-color: #416F43;
+$tetriary-content-color: #9CBD76;
+$header-darkgreen: #21331f;
+
+$primary-font: 'Quicksand', sans-serif;
+$secondary-font: 'Inter', sans-serif;
+
+$font-size-1: 12px;
+$font-size-2: 16px;
+$font-size-3: 24px;
+$font-size-4: 32px;
+$font-size-5: 48px;
+
+$a38-default-padding: 24px;
+$a38-border-radius: 16px;
+$a38-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+
+// Media queries
+$breakpoint-md: 900px;
+$max-width: 1280px;
+
+@mixin mediaMd {
+  @media screen and (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin mediaLg {
+  @media screen and (min-width: $max-width) {
+    @content;
+  }
+}
