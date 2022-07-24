@@ -20,11 +20,11 @@ const Summary: React.FC<Props> = props => {
     console.log(tickets);
   })
 
-  const renderTicketTypeSummary = (ticket: TicketType) =>  {
+  const renderTicketTypeSummary = (ticket: TicketType, index: number) =>  {
     let ticketTypeLength = tickets.filter(tckt =>  tckt.name === ticket.name).length;
     if (ticketTypeLength > 0) {
       return (
-        <div className="ticket-container">
+        <div className="ticket-container" key={index}>
           <div className="ticket-details">
             <div className="title-container">
               <div className="ticket">
@@ -45,7 +45,7 @@ const Summary: React.FC<Props> = props => {
     <div>
       <div className="ticket-list-container">
         {ticketTypes.map((ticket, index) =>  {
-          return renderTicketTypeSummary(ticket);
+          return renderTicketTypeSummary(ticket, index);
         })}
       </div>
       <div className="sum-container">

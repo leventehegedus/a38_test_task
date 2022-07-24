@@ -1,0 +1,24 @@
+@import '../../styles/variables.scss';
+
+.user-form-container {
+  label {
+    input {
+      width: 100%;
+      height: 36px;
+      box-shadow: $a38-shadow;
+      border-radius: 6px;
+      padding: $a38-default-padding;
+      border: none;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .error-block {
+      display: flex;
+      height: 24px;
+      color: red;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: 12px;
+    }
+  }
+}

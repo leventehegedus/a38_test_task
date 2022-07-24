@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
 import './Wizard.scss';
 import Breadcrumb from '../Breadcrumb/Breadcrumb';
 import TicketListContainer from '../TicketListContainer/TicketListContainer';
 import Summary from '../Summary/Summary';
 import UserForm from '../UserForm/UserForm';
+import PrintPage from '../PrintPage/PrintPage';
 import { Step, TicketType, Store } from '../../types/types';
 import { useSelector } from "react-redux";
 
@@ -37,6 +37,7 @@ const Wizard: React.FC = () => {
         { activeStep === 1 && <TicketListContainer tickets={tickets}/>}
         { activeStep === 2 && <Summary ticketTypes={tickets}/>}
         { activeStep === 3 && <UserForm/>}
+        { activeStep === 4 && <PrintPage/>}
       </div>
     </div>
   )

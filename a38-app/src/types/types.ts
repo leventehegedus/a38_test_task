@@ -9,11 +9,6 @@ export interface TicketType {
   price: number
 }
 
-export interface User {
-  name: string,
-  email: string
-}
-
 export interface Store {
   tickets: TicketType[],
   step: number
