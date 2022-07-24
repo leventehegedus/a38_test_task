@@ -7,8 +7,12 @@
   box-shadow: $a38-shadow;
   border-radius: $a38-border-radius;
   padding: $a38-default-padding;
+
   @include mediaMd {
     width: 840px;
     height: 600px;
+  }
+  .wizard-content-container {
+    margin-bottom: 24px;
   }
 }

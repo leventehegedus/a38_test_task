@@ -17,7 +17,7 @@ const Breadcrumb: React.FC<Props> = props => {
         return (
           <div key={step.id} className={activeStep === step.id ? 'step-container active' : 'step-container'}>
             <div className="step-index">
-              <span>{step.id}</span>
+              <span>{step.id}.</span>
             </div>
             <div className="step-name">
               <span>{step.name}</span>

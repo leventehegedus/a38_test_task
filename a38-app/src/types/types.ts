@@ -15,5 +15,6 @@ export interface User {
 }
 
 export interface Store {
-  tickets: TicketType[]
+  tickets: TicketType[],
+  step: number
 }

@@ -4,14 +4,17 @@
   display: flex;
   justify-content: flex-start;
   gap: 24px;
+  margin-bottom: 24px;
+
   .step-container {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 12px;
+    gap: 6px;
     border-bottom: 1px solid $primary-dark-content-color;
     font-size: $font-size-1;
     text-align: left;
+
     &.active {
       color: $secondary-content-color;
       border-bottom: 1px solid $secondary-content-color;

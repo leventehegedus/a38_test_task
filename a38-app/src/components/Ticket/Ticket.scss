@@ -1,0 +1,56 @@
+@import '../../styles/variables.scss';
+
+.ticket-container {
+  width: 100%;
+  height: 100px;
+  padding: 24px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: $a38-shadow;
+
+  .ticket-details {
+    text-align: left;
+    .title-container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 12px;
+      .ticket {
+        font-weight: 700;
+        font-size: 24px;
+      }
+      .available {
+        font-weight: 300;
+      }
+    }
+    .price {
+      font-weight: 400;
+    }
+  }
+  .buttons-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+
+    .button {
+      height: 36px;
+      width: 36px;
+      padding: 6px;
+      border-radius: 6px;
+      box-shadow: $a38-shadow;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      &:hover {
+        background-color: #eee;
+      }
+    }
+  }
+  .count {
+    display: flex;
+    align-items: center;
+  }
+}

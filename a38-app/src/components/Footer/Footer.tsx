@@ -1,41 +1,38 @@
 import React from 'react';
 import './Footer.scss';
-import { Step } from '../../types/types';
+import { Store } from '../../types/types';
+import { stepToPage } from "../../store/actions";
+import { useSelector, useDispatch } from "react-redux";
 
 interface Props {
-  activeStep: number,
-  setActiveStep: Function,
-  steps: Step[];
+  enableBack: boolean,
+  enableNext: boolean
 }
 
 const Footer: React.FC<Props> = props => {
 
-  const { activeStep, setActiveStep, steps } = props;
+  const { enableBack, enableNext } = props;
 
-  const handleSteps = (step: number, direction: string): void =>  {
+  const activeStep = useSelector((state: Store) => state.step);
+  const dispatch = useDispatch();
+
+  const handleSteps = (step: number, direction: string): void => {
     if (direction === 'next') {
-      //      console.log('step', step, 'direction', direction);
-      if (step === steps.length) {
-        console.log('a')
-        setActiveStep(1);
-      } else {
-        console.log('b')
-        setActiveStep(step + 1);
+      if (enableNext) {
+        dispatch(stepToPage(step + 1));
       }
     } else if (direction === 'prev') {
-      //    console.log('step', step, 'direction', direction);
-      if (step !== 1) {
-        console.log('c')
-        setActiveStep(step - 1);
+      if (enableBack) {
+        dispatch(stepToPage(step - 1));
       }
     }
   }
 
 
   return (
-    <div>
-      <button onClick={() =>  handleSteps(activeStep, 'prev')}>prev</button>
-      <button onClick={() =>  handleSteps(activeStep, 'next')}>next</button>
+    <div className="footer-container">
+      <button disabled={!enableBack} onClick={() => handleSteps(activeStep, 'prev')}>prev</button>
+      <button disabled={!enableNext} onClick={() => handleSteps(activeStep, 'next')}>next</button>
     </div>
   )
 }
