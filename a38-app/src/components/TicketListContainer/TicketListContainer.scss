@@ -1,6 +1,8 @@
+@import '../../styles/variables.scss';
+
 .ticket-list-container {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: $a38-gap;
 }

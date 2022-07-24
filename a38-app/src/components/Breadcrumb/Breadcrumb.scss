@@ -3,7 +3,7 @@
 .breadcrumb-container {
   display: flex;
   justify-content: flex-start;
-  gap: 24px;
+  gap: $a38-gap;
   margin-bottom: 24px;
 
   .step-container {
@@ -11,13 +11,13 @@
     justify-content: flex-start;
     align-items: center;
     gap: 6px;
-    border-bottom: 1px solid $primary-dark-content-color;
+    border-bottom: 1px solid $a38-black;
     font-size: $font-size-1;
     text-align: left;
 
     &.active {
-      color: $secondary-content-color;
-      border-bottom: 1px solid $secondary-content-color;
+      color: $a38-green;
+      border-bottom: 1px solid $a38-green;
     }
   }
 }

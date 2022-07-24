@@ -34,7 +34,7 @@ const Summary: React.FC<Props> = props => {
             <div className="price">{ticket.price} Ft</div>
           </div>
           <div className="count">
-            <span>{ticketTypeLength} </span><span>{ticketTypeLength >  1 ? 'tickets' : 'ticket'}</span>
+            <span>{ticketTypeLength}</span><span>{ticketTypeLength >  1 ? 'tickets' : 'ticket'}</span>
           </div>
         </div>
       );

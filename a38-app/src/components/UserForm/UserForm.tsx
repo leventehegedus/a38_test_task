@@ -24,11 +24,11 @@ const UserForm: React.FC = () => {
   return (
     <div className="user-form-container">
       <label>
-        <input value={name} placeholder="Name *" onChange={(event) => { setName(event.target.value) }} />
+        <input type="text" value={name} placeholder="Name *" onChange={(event) => { setName(event.target.value) }} />
         <div className="error-block">{isNameChanged && !name && <span>Name is required</span>}</div>
       </label>
       <label>
-        <input value={email} placeholder="E-mail *" onChange={(event) => { setEmail(event.target.value) }} />
+        <input type="email" value={email} placeholder="E-mail *" onChange={(event) => { setEmail(event.target.value) }} />
         <div className="error-block">{isEmailChanged && !email && <span>Email is required</span>}</div>
       </label>
       <Footer enableBack={true} enableNext={name &&  email ? true : false} />

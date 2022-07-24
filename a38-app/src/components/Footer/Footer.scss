@@ -3,22 +3,5 @@
 .footer-container {
   display: flex;
   justify-content: space-between;
-
-  button {
-    border-radius: 6px;
-    height: 36px;
-    width: 120px;
-    cursor: pointer;
-    box-shadow: $a38-shadow;
-    background-color: transparent;
-    border: none;
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    &:hover {
-      background-color: #eee;
-    }
-    &:disabled {
-      cursor: not-allowed;
-    }
-  }
+  margin-top: 24px;
 }

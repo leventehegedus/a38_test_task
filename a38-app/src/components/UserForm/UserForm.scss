@@ -6,7 +6,7 @@
       width: 100%;
       height: 36px;
       box-shadow: $a38-shadow;
-      border-radius: 6px;
+      border-radius: $a38-border-radius-small;
       padding: $a38-default-padding;
       border: none;
       font-family: 'Montserrat', sans-serif;
@@ -18,7 +18,7 @@
       color: red;
       justify-content: flex-start;
       align-items: center;
-      font-size: 12px;
+      font-size: $font-size-1;
     }
   }
 }

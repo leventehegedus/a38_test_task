@@ -37,7 +37,7 @@ const Footer: React.FC<Props> = props => {
   return (
     <div className="footer-container">
       <button disabled={!enableBack} onClick={() => handleSteps(activeStep, 'prev')}>prev</button>
-      <button disabled={!enableNext} onClick={() => handleSteps(activeStep, 'next')}>next</button>
+      <button disabled={!enableNext} onClick={() => handleSteps(activeStep, 'next')}>{activeStep === 4 ? 'new client' : 'next'}</button>
     </div>
   )
 }

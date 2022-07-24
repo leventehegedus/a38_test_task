@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { Store } from "../../types/types";
 import './PrintPage.scss';
 import Footer from '../Footer/Footer';
+import { FiMail, FiPrinter } from 'react-icons/fi';
 
 const PrintPage: React.FC = () => {
   const tickets = useSelector((state: Store) => state.tickets);
@@ -13,15 +14,15 @@ const PrintPage: React.FC = () => {
 
   useEffect(() => {
     let helperVariable: boolean = true;
-    for(let i = 0; i < tickets.length; i++){
-      if(!printedTickets.includes(i) && !sentTickets.includes(i)){
+    for (let i = 0; i < tickets.length; i++) {
+      if (!printedTickets.includes(i) && !sentTickets.includes(i)) {
         helperVariable = false;
       }
     }
     setAllSelected(helperVariable);
-  },[sentTickets, printedTickets])
+  }, [sentTickets, printedTickets])
 
-  const toggleSelectedTickets = (ticketIndex: number): void =>  {
+  const toggleSelectedTickets = (ticketIndex: number): void => {
     if (!selectedTickets.includes(ticketIndex)) {
       let helperArray: Number[] = [...selectedTickets, ticketIndex];
       setSelectedTickets(helperArray);
@@ -35,57 +36,66 @@ const PrintPage: React.FC = () => {
     }
   }
 
-  const getClassName = (index: number): string =>  {
+  const getClassName = (index: number): string => {
     let className = "";
-    if(selectedTickets.includes(index)){
+    if (selectedTickets.includes(index)) {
       className = className + 'highlighted ';
     }
-    if(printedTickets.includes(index)){
+    if (printedTickets.includes(index)) {
       className = className + 'printed ';
     }
-    if(sentTickets.includes(index)){
+    if (sentTickets.includes(index)) {
       className = className + 'sent ';
     }
     return className;
   }
 
-  const highlightAll = () => {
-    if(selectedTickets.length > 0){
+  const highlightAll = () =>  {
+    if (selectedTickets.length >  0) {
       setSelectedTickets([]);
     } else {
       let helperArray: Number[] = [];
-      for(let i = 0; i < tickets.length; i++){
+      for (let i = 0; i < tickets.length; i++) {
         helperArray.push(i);
       }
       setSelectedTickets(helperArray);
     }
   }
 
-  const printTicket = () => {
+  const printTicket = () =>  {
     setPrintedTickets([...selectedTickets, ...printedTickets]);
+    setSelectedTickets([]);
   }
 
   const sendTicket = () => {
     setSentTickets([...selectedTickets, ...sentTickets]);
+    setSelectedTickets([]);
   }
 
   return (
     <div>
-      <div onClick={() => highlightAll()}>highlight all</div>
-      <div onClick={() => printTicket()}>print</div>
-      <div onClick={() => sendTicket()}>send</div>
-      <div>
-      isAllSelected: {isAllSelected ? 'true' : 'false'}
+      <div className="print-page-buttons">
+        <button onClick={() => highlightAll()}>{selectedTickets.length > 0 ? 'uncheck all' : 'check all'}</button>
+        <button onClick={() => printTicket()}>print</button>
+        <button onClick={() => sendTicket()}>send</button>
       </div>
-      {tickets.map((ticket, index) => {
-        return (
-          <div key={index} onClick={() =>  toggleSelectedTickets(index)} className={"ticket-tile " + getClassName(index)}>
-            <span>{ticket.name}</span>
-            <span>{ticket.price}</span>
-          </div>
-        )
-      })}
-      <Footer enableBack={false} enableNext={isAllSelected}/>
+      <div className="ticket-tile-container">
+        {tickets.sort((a,b) => a.name.localeCompare(b.name)).map((ticket, index) => {
+          return (
+            <div key={index} onClick={() => toggleSelectedTickets(index)} className={"ticket-tile " + getClassName(index)}>
+              <div className="title"><span>{ticket.name}</span></div>
+              <div className="price"><span>{ticket.price} Ft</span></div>
+              <div className="icon print">
+                <FiPrinter />
+              </div>
+              <div className="icon sent">
+                <FiMail />
+              </div>
+            </div>
+          )
+        })}
+      </div>
+      <Footer enableBack={false} enableNext={isAllSelected} />
     </div>
   )
 }

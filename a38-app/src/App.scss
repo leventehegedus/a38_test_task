@@ -7,6 +7,7 @@
 body {
   padding: 0;
   margin: 0;
+  color: $a38-black;
 }
 
 .App {
@@ -15,5 +16,26 @@ body {
   font-family: $primary-font;
   @include mediaMd {
     padding: 0;
+  }
+
+  button {
+    border-radius: $a38-border-radius-small;
+    height: 36px;
+    width: 120px;
+    cursor: pointer;
+    box-shadow: $a38-shadow;
+    background-color: transparent;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    border: 1px solid $a38-dark-white;
+
+    &:hover {
+      background-color: $a38-dark-white;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
 }

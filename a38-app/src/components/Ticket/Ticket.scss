@@ -2,32 +2,37 @@
 
 .ticket-container {
   width: 100%;
-  height: 100px;
-  padding: 24px;
+  padding: $a38-default-padding;
   border-radius: 12px;
   display: flex;
   justify-content: space-between;
   box-shadow: $a38-shadow;
+  min-height: 100px;
+  border: 1px solid $a38-dark-white;
+  @include mediaMd {
+    height: 100px;
+  }
 
   .ticket-details {
     text-align: left;
+
     .title-container {
       display: flex;
       justify-content: flex-start;
       align-items: center;
       gap: 12px;
+
       .ticket {
         font-weight: 700;
-        font-size: 24px;
+        font-size: $font-size-3;
       }
+
       .available {
         font-weight: 300;
       }
     }
-    .price {
-      font-weight: 400;
-    }
   }
+
   .buttons-container {
     display: flex;
     justify-content: flex-start;
@@ -38,17 +43,19 @@
       height: 36px;
       width: 36px;
       padding: 6px;
-      border-radius: 6px;
+      border-radius: $a38-border-radius-small;
       box-shadow: $a38-shadow;
       display: flex;
       justify-content: center;
       align-items: center;
       cursor: pointer;
+
       &:hover {
-        background-color: #eee;
+        background-color: $a38-dark-white;
       }
     }
   }
+
   .count {
     display: flex;
     align-items: center;

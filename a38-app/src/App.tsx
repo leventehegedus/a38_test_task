@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.scss';
 import Wizard from './components/Wizard/Wizard';
 import { ThemeProvider } from '@mui/material/styles';

@@ -1,7 +1,9 @@
+@import '../../styles/variables.scss';
+
 .sum-container {
   margin-top: 24px;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid $a38-light-grey;
   display: flex;
   justify-content: space-between;
-  padding: 12px 24px;
+  padding: 12px $a38-default-padding;
 }

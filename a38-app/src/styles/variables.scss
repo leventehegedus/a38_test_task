@@ -1,26 +1,21 @@
-// Global variables
-$primary-background-color: #F6F2ED;
-$secondary-background-color: #FFFFFF;
-$tetriary-background-color: #EDE1C3;
-$primary-dark-content-color: #000000;
-$primary-bright-content-color: #FFFFFF;
-$secondary-content-color: #416F43;
-$tetriary-content-color: #9CBD76;
-$header-darkgreen: #21331f;
+$a38-light-grey: #ddd;
+$a38-dark-white: #eee;
+$a38-white: #fff;
+$a38-black: #222;
+$a38-green: #416F43;
 
 $primary-font: 'Montserrat', sans-serif;
 
 $font-size-1: 12px;
 $font-size-2: 16px;
 $font-size-3: 24px;
-$font-size-4: 32px;
-$font-size-5: 48px;
 
 $a38-default-padding: 24px;
 $a38-border-radius: 16px;
-$a38-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+$a38-border-radius-small: 6px;
+$a38-shadow: 0px 2px 3px rgba($a38-black, 0.25);
+$a38-gap: 24px;
 
-// Media queries
 $breakpoint-md: 900px;
 $max-width: 1280px;
 
