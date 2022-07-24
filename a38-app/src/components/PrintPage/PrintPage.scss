@@ -1,0 +1,17 @@
+@import '../../styles/variables.scss';
+
+.ticket-tile {
+  width: 300px;
+  height: 100px;
+  box-shadow: $a38-shadow;
+  border-radius: 6px;
+}
+.highlighted {
+  color: green;
+}
+.printed {
+  border: 1px solid red;
+}
+.sent {
+  border-bottom: 2px solid blue;
+}
