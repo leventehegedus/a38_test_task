@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useSelector } from "react-redux";
 import { Store } from "../../types/types";
 import './PrintPage.scss';
+import Footer from '../Footer/Footer';
 
 const PrintPage: React.FC = () => {
   const tickets = useSelector((state: Store) => state.tickets);
@@ -84,6 +85,7 @@ const PrintPage: React.FC = () => {
           </div>
         )
       })}
+      <Footer enableBack={false} enableNext={isAllSelected}/>
     </div>
   )
 }

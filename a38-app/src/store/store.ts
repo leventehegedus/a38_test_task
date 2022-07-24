@@ -5,6 +5,7 @@ import {
   ActionTypes,
   ADD_TICKET,
   REMOVE_TICKET,
+  RESET_TICKET,
   STEP_TO_PAGE
 } from "./actions";
 import { Store, TicketType } from "../types/types";
@@ -38,6 +39,11 @@ function ticketReducer(
       return {
         ...state,
         tickets: removeTicket(state.tickets, action.payload)
+      };
+    case RESET_TICKET:
+      return {
+        ...state,
+        tickets: []
       };
     case STEP_TO_PAGE:
       return {

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.scss';
 import { Store } from '../../types/types';
-import { stepToPage } from "../../store/actions";
+import { stepToPage, resetTickets } from "../../store/actions";
 import { useSelector, useDispatch } from "react-redux";
 
 interface Props {
@@ -19,7 +19,12 @@ const Footer: React.FC<Props> = props => {
   const handleSteps = (step: number, direction: string): void => {
     if (direction === 'next') {
       if (enableNext) {
-        dispatch(stepToPage(step + 1));
+        if(activeStep === 4){
+          dispatch(stepToPage(1));
+          dispatch(resetTickets());
+        } else {
+          dispatch(stepToPage(step + 1));
+        }
       }
     } else if (direction === 'prev') {
       if (enableBack) {
