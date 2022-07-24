@@ -3,6 +3,7 @@ import './Wizard.scss';
 import Breadcrumb from '../Breadcrumb/Breadcrumb';
 import Footer from '../Footer/Footer';
 import TicketListContainer from '../TicketListContainer/TicketListContainer';
+import Summary from '../Summary/Summary';
 import UserForm from '../UserForm/UserForm';
 import { Step, TicketType } from '../../types/types';
 
@@ -37,6 +38,7 @@ const Wizard: React.FC = () => {
       <Breadcrumb activeStep={activeStep} steps={steps}/>
       <div className="wizard-content-container">
         { activeStep === 1 && <TicketListContainer tickets={tickets}/>}
+        { activeStep === 2 && <Summary ticketTypes={tickets}/>}
         { activeStep === 3 && <UserForm/>}
       </div>
       <Footer activeStep={activeStep} setActiveStep={setActiveStep} steps={steps}/>

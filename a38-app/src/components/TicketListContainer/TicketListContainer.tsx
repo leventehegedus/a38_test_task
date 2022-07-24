@@ -10,9 +10,9 @@ const TicketListContainer: React.FC<Props> = props => {
 
   return (
     <div>
-      { tickets.map(ticket => {
+      { tickets.map((ticket, index) => {
         return (
-          <Ticket {...ticket}/>
+          <Ticket {...ticket} key={index}/>
         )
       })}
     </div>
