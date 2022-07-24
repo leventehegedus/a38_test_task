@@ -1,20 +1,13 @@
-import { useEffect } from 'react';
 import { TicketType } from '../../types/types';
 import { addTicket, removeTicket } from "../../store/actions";
-import { Store } from "../../types/types";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { FiShoppingCart, FiTrash } from 'react-icons/fi';
 import './Ticket.scss';
 
 const Ticket: React.FC<TicketType> = props => {
-  const tickets = useSelector((state: Store) => state.tickets);
   const dispatch = useDispatch();
 
   const { name, available, price } = props;
-
-  useEffect(() => {
-    console.log(tickets);
-  })
 
   return (
     <div className="ticket-container">
